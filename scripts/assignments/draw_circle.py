@@ -16,9 +16,3 @@ if __name__=='__main__':
         pub.publish(msg)
         rate.sleep()
 
-# akhon code e kono change korle just
-# git add .
-# git commit -m "ki change korsi sei relaeted msg (Ex: fixed issue)"
-# git push
-
-# ei 3 ta command dilei hobe, next time kono change kora hoile segula upload korar jonno
