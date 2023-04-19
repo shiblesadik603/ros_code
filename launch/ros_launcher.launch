@@ -1,0 +1,27 @@
+
+<launch>
+  <!-- Set the topic name for each turtle -->
+  <arg name="turtle1_topic" default="/turtle1/cmd_vel"/>
+  <arg name="turtle2_topic" default="/turtle2/cmd_vel"/>
+  <arg name="turtle3_topic" default="/turtle3/cmd_vel"/>
+
+  <!-- Spawn the first turtle -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle1" respawn="true" output="screen"/>
+  <!-- <param name="turtle1_teleop/turtle1_topic" value="$(arg turtle1_topic)"/> -->
+
+  <!-- Spawn the second turtle -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle2" respawn="true" output="screen"/>
+  <!-- <param name="turtle2_teleop/turtle1_topic" value="$(arg turtle2_topic)"/> -->
+
+  <!-- Spawn the third turtle -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle3" respawn="true" output="screen"/>
+
+  <!-- Make the first turtle draw a square -->
+  <node pkg="my_robot_controller" type="draw_circle.py" name="turtle1_shape" />
+
+  <!-- Make the second turtle draw a triangle -->
+  <node pkg="my_robot_controller" type="make_square.py" name="turtle2_shape" />
+
+  <!-- Make the third turtle draw a circle -->
+  <node pkg="my_robot_controller" type="make_tringle.py" name="turtle3_shape" />
+</launch>
